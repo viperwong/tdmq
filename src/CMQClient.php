@@ -1,7 +1,6 @@
 <?php
-require_once CMQAPI_ROOT_PATH . '/cmq_exception.php';
-require_once CMQAPI_ROOT_PATH . '/cmq_http.php';
-require_once CMQAPI_ROOT_PATH . '/sign.php';
+
+namespace weberhuang\tdmq;
 
 class CMQClient
 {

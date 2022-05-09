@@ -1,5 +1,6 @@
 <?php
-require_once CMQAPI_ROOT_PATH . '/cmq_exception.php';
+
+namespace weberhuang\tdmq;
 
 class CMQHttp
 {
@@ -83,54 +84,7 @@ class CMQHttp
     }
 }
 
-class RequestInternal
-{
-    public $header;
-    public $method;
-    public $uri;
-    public $data;
 
-    public function __construct($method = "", $uri = "", $header = NULL, $data = "") {
-        if ($header == NULL) {
-            $header = array();
-        }
-        $this->method = $method;
-        $this->uri = $uri;
-        $this->header = $header;
-        $this->data = $data;
-    }
 
-    public function __toString()
-    {
-        $info = array("method" => $this->method,
-                     "uri" => $this->uri,
-                     "header" => json_encode($this->header),
-                     "data" => $this->data);
-        return json_encode($info);
-    }
-}
 
-class ResponseInternal
-{
-    public $header;
-    public $status;
-    public $data;
-
-    public function __construct($status = 0, $header = NULL, $data = "") {
-        if ($header == NULL) {
-            $header = array();
-        }
-        $this->status = $status;
-        $this->header = $header;
-        $this->data = $data;
-    }
-
-    public function __toString()
-    {
-        $info = array("status" => $this->status,
-                     "header" => json_encode($this->header),
-                     "data" => $this->data);
-        return json_encode($info);
-    }
-}
 
