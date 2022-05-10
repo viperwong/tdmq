@@ -21,7 +21,6 @@ class CMQExceptionBase extends \RuntimeException
 
     public function __construct($message, $code=-1, $data=array())
     {
-        parent::__construct($message, $code, $data);
         $this->code = $code;
         $this->message = $message;
         $this->data = $data;
